@@ -90,4 +90,25 @@ class ControllerLogin extends BaseController
                 return response()->json($resultado); 
 
     }
+
+
+
+
+     public function vlistarusuarios(){
+              //Proteger ruta  al iniciar login    
+           if (Session()->has("usuariologin")) {
+              //conexion con BD 
+              $conexiondb='dbWeb2';
+              // seleciona todos los campos que mostrara de la tabla "usuario"
+              $listau=DB::connection($conexiondb)->select('select nombre_u,user_u,estado_u from usuario' );
+
+              // capturar los datos enviado de la consulta
+              return View::make('listausuario',['listausa'=>$listau]);
+
+           }else{
+               
+               return View::make('login');
+           }
+               
+    }
 }

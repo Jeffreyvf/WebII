@@ -36,8 +36,10 @@ Route::get('/',[ControllerLogin::class,'clogin']);
 
 Route::get('registro',[ControllerLogin::class,'cregistro']);
 
-Route::post('validarlogin',[ControllerLogin::class,'validarUsuario']);
+Route::get('validarlogin',[ControllerLogin::class,'validarUsuario']);
 
 Route::get('principal',[ControllerPrincipal::class,'principal']);
 
-Route::post('nuevousuario',[ControllerLogin::class,'agregarUsuario']);
+Route::get('nuevousuario',[ControllerLogin::class,'agregarUsuario']);
+
+Route::get('listarusuarios',[ControllerLogin::class,'vlistarusuarios']);

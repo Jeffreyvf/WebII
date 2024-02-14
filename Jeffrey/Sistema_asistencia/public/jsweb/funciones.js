@@ -46,7 +46,7 @@ function validarcampos(){
 
 function validarLogin(useru,claveu){
 
-    var type = 'POST';
+    var type = 'GET';
     var formdata={'lusuario':useru,'lclave':claveu};
     var ruta='validarlogin';
 
@@ -55,7 +55,7 @@ function validarLogin(useru,claveu){
         url:ruta,
         data:formdata,
         dataType:"JSON",
-         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
         success:function(data){
 
                 console.log(data);
@@ -91,12 +91,14 @@ function resetCampos(ncampo){
 }
 
 function grabarNuevoUsuario(){
-   var type = 'POST';
+   var type = 'GET';
 
     ///capturar las variables del formulario por su id:
      useru=document.getElementById('eduser').value;
      claveu=document.getElementById('edclave').value;
      alias=document.getElementById('ednombre').value;
+     
+
 
     // controladorLogin  con los campos: usuario,nombre, clave
     var formdata={'luser':useru,'lclave':claveu,'lalias':alias};
