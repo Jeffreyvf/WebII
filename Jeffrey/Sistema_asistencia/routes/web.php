@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerLogin;
 use App\Http\Controllers\ControllerPrincipal;
-
+use App\Http\Controllers\ControllerPersona;
+use App\Http\Controllers\ControllerUsuario;
+use App\Http\Controllers\ControllerMascota;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,10 +38,36 @@ Route::get('/',[ControllerLogin::class,'clogin']);
 
 Route::get('registro',[ControllerLogin::class,'cregistro']);
 
-Route::get('validarlogin',[ControllerLogin::class,'validarUsuario']);
+Route::post('validarlogin',[ControllerLogin::class,'validarUsuario']);
 
 Route::get('principal',[ControllerPrincipal::class,'principal']);
 
-Route::get('nuevousuario',[ControllerLogin::class,'agregarUsuario']);
+Route::post('nuevousuario',[ControllerLogin::class,'agregarUsuario']);
+// sin uso
+//Route::get('listarusuarios',[ControllerLogin::class,'vlistarusuarios']);
+Route::get('lUsuarios',[ControllerUsuario::class,'vLusuarios']);
 
-Route::get('listarusuarios',[ControllerLogin::class,'vlistarusuarios']);
+Route::get('lnuevoUsuario',[ControllerUsuario::class,'vnuevoUsuario']);
+
+Route::get('gravarUsuario',[ControllerUsuario::class,'vgravarUsuario']);
+
+Route::get('DesactivarActivar',[ControllerUsuario::class,'vDesactivarActivar']);
+
+Route::get('filtrarUsa',[ControllerUsuario::class,'vfiltrarUsa']);
+
+Route::get('editarUsuario',[ControllerUsuario::class,'vEditarUsuario']);
+
+Route::get('actualizarUsuario',[ControllerUsuario::class,'vActualizarUsuario']);
+
+
+
+//////////////// examen //////////////////////////////
+Route::get('listarMascota',[ControllerMascota::class,'vlistarMascota']);
+Route::get('lnuevomascota',[ControllerMascota::class,'vNuevaMascota']);
+Route::get('lgravarmascota',[ControllerMascota::class,'vGravarMascota']);
+Route::get('lmascotaDesactivar',[ControllerMascota::class,'vMascotadesactivar']);
+Route::get('lfiltrarMascota',[ControllerMascota::class,'vfiltrarMascota']);
+
+
+// Vista reporte
+Route::get('verPDF',[ControllerUsuario::class,'ReportesPDF']);

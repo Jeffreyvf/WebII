@@ -17,7 +17,11 @@
         <div class="info">
 
           <!--Muestra el nombre de la persona que inicio sessión-->
-          <a href="#" class="d-block">{{Session('usuariologin')[0]['nombreu']}}</a>
+          <a href="#" class="d-block">{{Session('usuariologin')[0]['nombreu']}}
+
+
+          </a>
+
         </div>
       </div>
 
@@ -39,21 +43,20 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           
-          <li class="nav-header">Herramientas</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-             <i class="fas fa-user-plus"></i>
+           <li class="nav-item">
+            <a href="/principal" class="nav-link">
+             <i class="fas fa-home"></i>
               <p>
-                Registro usuario
+                Inicio
               </p>
             </a>
           </li>
-
+          
           <li class="nav-item">
-            <a href="/listarusuarios" class="nav-link">
-             <i class="fas fa-list-alt"></i>
+            <a href="#" class="nav-link" onclick="listadeUsurio('principal')">
+             <i class="fas fa-user-plus" ></i>
               <p>
-                Listar  usuario
+                Registro usuario
               </p>
             </a>
           </li>
@@ -74,10 +77,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-            <i class="fas fa-folder-plus"></i>
+            <a href="#" class="nav-link" onclick="listaMascotas('principal')">
+            <i class="fas fa-paw"></i>
               <p>
-                Registro de bajamedica     
+                Mascota    
               </p>
             </a>           
           </li>

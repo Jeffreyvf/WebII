@@ -13,6 +13,9 @@
 
  <!-- javascript ---->
 <script src="{{asset('jsweb/funciones.js')}}"> </script>
+<script src="{{asset('jsweb/usuario.js')}}"> </script>
+<script src="{{asset('jsweb/mascota.js')}}"> </script>
 
 
-<!----  iconos ----->
+
+<!---- modal vental guardar ----->

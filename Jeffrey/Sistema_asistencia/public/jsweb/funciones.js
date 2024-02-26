@@ -46,7 +46,7 @@ function validarcampos(){
 
 function validarLogin(useru,claveu){
 
-    var type = 'GET';
+    var type = 'POST';
     var formdata={'lusuario':useru,'lclave':claveu};
     var ruta='validarlogin';
 
@@ -91,7 +91,7 @@ function resetCampos(ncampo){
 }
 
 function grabarNuevoUsuario(){
-   var type = 'GET';
+   var type = 'POST';
 
     ///capturar las variables del formulario por su id:
      useru=document.getElementById('eduser').value;
@@ -103,6 +103,11 @@ function grabarNuevoUsuario(){
     // controladorLogin  con los campos: usuario,nombre, clave
     var formdata={'luser':useru,'lclave':claveu,'lalias':alias};
     var ruta='nuevousuario';
+
+
+     
+
+
 
     $.ajax({
         type:type,

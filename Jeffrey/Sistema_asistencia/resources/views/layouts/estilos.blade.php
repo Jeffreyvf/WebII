@@ -13,4 +13,5 @@
   <!--<link rel="stylesheet" href="../../dist/css/adminlte.min.css">-->
   <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
 
-  <!--Estilos css personalizados--->
+  <!--Estilos css modal--->
+  

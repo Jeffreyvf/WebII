@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use View;
 use DB;
 use Session;
+use PDF;
 
 class ControllerLogin extends BaseController
 {
@@ -93,14 +94,14 @@ class ControllerLogin extends BaseController
 
 
 
-
+    ///////// sin uso todavia
      public function vlistarusuarios(){
               //Proteger ruta  al iniciar login    
            if (Session()->has("usuariologin")) {
               //conexion con BD 
               $conexiondb='dbWeb2';
               // seleciona todos los campos que mostrara de la tabla "usuario"
-              $listau=DB::connection($conexiondb)->select('select nombre_u,user_u,estado_u from usuario' );
+              $listau=DB::connection($conexiondb)->select('select cod_u, nombre_u,user_u,estado_u from usuario' );
 
               // capturar los datos enviado de la consulta
               return View::make('listausuario',['listausa'=>$listau]);
